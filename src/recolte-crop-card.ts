@@ -5,7 +5,9 @@ import type { HomeAssistant, Reading, RecolteCardConfig } from './types';
 import { CARD_TAG, CARD_VERSION, DEFAULT_ICON, EDITOR_TAG, INFO_URL, MAPS_URL, REFRESH_MS } from './const';
 import { DEFAULT_PRODUCTS, PRODUCTS, Product } from './products';
 import { cachedReadings, fromEntity, isRecolteSensor, recolteSensors } from './data/aafc';
+import { locationName, locationSensors, recolteLocations } from './data/locations';
 import { interpret, progress } from './interpret';
+import { visibleOrder } from './order';
 import { Lang, intlLocale, localize, resolveLanguage } from './localize/localize';
 
 console.info(
@@ -52,8 +54,10 @@ export class RecolteCropCard extends LitElement {
     return document.createElement(EDITOR_TAG);
   }
 
-  /** Default config when the card is added from the picker: the integration's sensors, else direct at home. */
+  /** Default config when the card is added from the picker: a Récolte location, else direct at home. */
   public static getStubConfig(hass: HomeAssistant): Partial<RecolteCardConfig> {
+    const location = recolteLocations(hass)[0];
+    if (location) return { device: location.id };
     const sensors = recolteSensors(hass);
     return sensors.length ? { entities: sensors.slice(0, 8) } : { products: DEFAULT_PRODUCTS };
   }
@@ -69,13 +73,16 @@ export class RecolteCropCard extends LitElement {
 
   public setConfig(config: RecolteCardConfig): void {
     if (!config) throw new Error('Invalid configuration');
-    if (config.entities?.length && config.products?.length) throw new Error(localize('card.both_sources', 'fr'));
+    if (config.device && config.entities?.length) throw new Error(localize('card.both_sources', 'fr'));
+    if (!config.device && config.entities?.length && config.products?.length) {
+      throw new Error(localize('card.products_with_entities', 'fr'));
+    }
     this._config = { ...DEFAULTS, ...config } as ResolvedConfig;
     this._maybeFetch();
   }
 
   public getCardSize(): number {
-    const count = this._config?.entities?.length ?? this._config?.products?.length ?? 4;
+    const count = this._config?.entities?.length ?? this._config?.products?.length ?? 8;
     return 1 + Math.ceil(count / 2) * 2;
   }
 
@@ -108,7 +115,7 @@ export class RecolteCropCard extends LitElement {
 
   private _maybeFetch(): void {
     const cfg = this._config;
-    if (!cfg || cfg.entities?.length || !cfg.products?.length) return;
+    if (!cfg || cfg.device || cfg.entities?.length || !cfg.products?.length) return;
     const location = this._location();
     if (!location) return;
     const target = `${location.join(',')}:${cfg.products.join(',')}`;
@@ -132,6 +139,13 @@ export class RecolteCropCard extends LitElement {
   /** The tiles to show, in the configured order; null while direct mode is still loading. */
   private _tiles(): Tile[] | null {
     const cfg = this._config!;
+    if (cfg.device) {
+      const sensors = locationSensors(this.hass!, cfg.device);
+      return visibleOrder([...sensors.keys()], cfg.products, cfg.hide).map((key) => {
+        const entity = sensors.get(key)!;
+        return { product: PRODUCTS[key], entity, reading: fromEntity(this.hass!.states[entity]) ?? undefined };
+      });
+    }
     if (cfg.entities?.length) {
       return cfg.entities.flatMap((entity): Tile[] => {
         const stateObj = this.hass?.states[entity];
@@ -154,7 +168,13 @@ export class RecolteCropCard extends LitElement {
     const t = (key: string, vars?: Record<string, string>) => localize(key, lang, vars);
 
     let message: string | undefined;
-    if (!cfg.entities?.length && !cfg.products?.length) message = t('card.no_source');
+    if (cfg.device) {
+      if (!locationSensors(this.hass, cfg.device).size) {
+        message = locationName(this.hass, cfg.device)
+          ? t('card.no_sensors')
+          : t('card.device_not_found', { device: cfg.device });
+      }
+    } else if (!cfg.entities?.length && !cfg.products?.length) message = t('card.no_source');
     else if (cfg.entities?.length) {
       const missing = cfg.entities.find((e) => !this.hass!.states[e]);
       const foreign = cfg.entities.find((e) => this.hass!.states[e] && !isRecolteSensor(this.hass!.states[e]));
@@ -163,13 +183,15 @@ export class RecolteCropCard extends LitElement {
     } else if (this._error) message = t(this._error);
 
     const tiles = message ? null : this._tiles();
-    const empty = tiles && tiles.length > 0 && tiles.every((tile) => !tile.reading) && !cfg.entities?.length;
+    // Direct mode only: with the integration, an unavailable sensor shows as its own tile.
+    const empty = tiles && tiles.length > 0 && tiles.every((tile) => !tile.reading) && !tiles[0].entity;
+    const title = cfg.title || (cfg.device && locationName(this.hass, cfg.device)) || t('card.default_title');
 
     return html`
       <ha-card class="theme-${cfg.theme} ${cfg.theme === 'auto' ? '' : 'banded'}">
         <div class="header">
           <ha-icon icon=${cfg.icon || DEFAULT_ICON}></ha-icon>
-          <div class="title">${cfg.title || t('card.default_title')}</div>
+          <div class="title">${title}</div>
         </div>
         ${
           message

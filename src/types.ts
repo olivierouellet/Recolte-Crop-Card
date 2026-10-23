@@ -6,8 +6,22 @@ export interface HassEntity {
   last_updated: string;
 }
 
+/** The entity and device registries as the frontend sees them (a subset of their fields). */
+export interface EntityRegistryEntry {
+  entity_id: string;
+  device_id?: string | null;
+  platform?: string;
+}
+export interface DeviceRegistryEntry {
+  id: string;
+  name?: string | null;
+  name_by_user?: string | null;
+}
+
 export interface HomeAssistant {
   states: Record<string, HassEntity>;
+  entities?: Record<string, EntityRegistryEntry>;
+  devices?: Record<string, DeviceRegistryEntry>;
   config: { latitude: number; longitude: number; location_name?: string };
   language?: string;
   locale?: { language: string };
@@ -20,9 +34,16 @@ export type Theme = 'auto' | 'earth' | 'green_yellow' | 'blue' | 'red_black' | '
 
 export interface RecolteCardConfig {
   type: string;
-  /** The Récolte integration's sensors, in the order to show them. */
+  /** A Récolte location (its device): every sensor it has, followed as products are added or removed. */
+  device?: string;
+  /** With `device`: products left out. */
+  hide?: string[];
+  /** The Récolte integration's sensors, chosen one by one, in the order to show them. */
   entities?: string[];
-  /** Direct mode: AAFC product codes (tType), in the order to show them. */
+  /**
+   * Direct mode: AAFC product codes (tType) to read, in the order to show them.
+   * With `device`: the order only; products it doesn't list follow, in the integration's order.
+   */
   products?: string[];
   /** Direct mode: where to read them; Home Assistant's home when left out. */
   latitude?: number;
