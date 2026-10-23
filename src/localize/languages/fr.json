@@ -1,0 +1,399 @@
+{
+  "card": {
+    "default_title": "Agroclimat",
+    "loading": "Chargement des données agroclimatiques…",
+    "fetch_failed": "Impossible de charger les données d’Agriculture et Agroalimentaire Canada.",
+    "no_source": "Choisissez des capteurs Récolte ou des produits dans l’éditeur de la carte.",
+    "both_sources": "Utilisez « entities » ou « products », pas les deux.",
+    "entity_not_found": "Entité introuvable : {entity}",
+    "not_recolte": "{entity} n’est pas un capteur de l’intégration Récolte.",
+    "no_data": "Pas de donnée",
+    "no_data_here": "Aucune donnée à cet endroit : la grille couvre les régions agricoles du Canada.",
+    "days": "{value} jours",
+    "day": "{value} jour",
+    "chu": "{value} UTC",
+    "gdd": "{value} DJC",
+    "target_progress": "{percent} de {target}",
+    "target_reached": "Cible de {target} atteinte",
+    "data_as_of": "Données d’AAC du {date}",
+    "link_maps": "Cartes agroclimatiques",
+    "link_info": "Météo agricole"
+  },
+  "class": {
+    "much_below": "Très bas",
+    "below": "Bas",
+    "normal": "Normal",
+    "above": "Élevé",
+    "much_above": "Très élevé",
+    "extremely_dry": "Extrêmement sec",
+    "severely_dry": "Très sec",
+    "moderately_dry": "Modérément sec",
+    "near_normal": "Près de la normale",
+    "moderately_wet": "Modérément humide",
+    "very_wet": "Très humide",
+    "extremely_wet": "Extrêmement humide",
+    "extreme_drought": "Sécheresse extrême",
+    "severe_drought": "Sécheresse grave",
+    "moderate_drought": "Sécheresse modérée",
+    "mild_drought": "Sécheresse légère",
+    "slightly_wet": "Légèrement humide"
+  },
+  "editor": {
+    "source": "Source des données",
+    "source_sensor": "Capteurs Home Assistant (intégration Récolte)",
+    "source_direct": "Directement d’Agriculture et Agroalimentaire Canada (sans intégration)",
+    "entities": "Capteurs Récolte",
+    "no_sensor": "Aucun capteur Récolte trouvé. Ajoutez l’intégration Récolte, ou choisissez « Directement d’Agriculture et Agroalimentaire Canada ».",
+    "change_products": "Changer les produits ou ajouter un endroit dans l’intégration",
+    "products": "Produits",
+    "location_source": "Endroit",
+    "location_home": "Le domicile dans Home Assistant",
+    "location_map": "Un endroit sur la carte",
+    "location": "Endroit",
+    "geolocate": "Utiliser la position de cet appareil",
+    "geolocating": "Recherche de la position…",
+    "geolocate_failed": "Position introuvable. Autorisez la localisation pour Home Assistant, ou placez le repère sur la carte.",
+    "geolocate_insecure": "La localisation demande une connexion HTTPS. Placez le repère sur la carte.",
+    "location_helper": "Les coordonnées sont arrondies à quatre décimales et enregistrées dans la configuration du tableau de bord.",
+    "title": "Titre",
+    "title_helper": "Laissez vide pour « Agroclimat ».",
+    "icon": "Icône",
+    "language": "Langue",
+    "lang_auto": "Automatique (Home Assistant)",
+    "lang_fr": "Français",
+    "lang_en": "English",
+    "theme": "Couleurs",
+    "theme_earth": "Terre (brun, vert et jaune)",
+    "theme_green_yellow": "Vert et jaune",
+    "theme_blue": "Bleu et jaune",
+    "theme_red_black": "Rouge et noir",
+    "theme_red_grey": "Rouge et gris",
+    "theme_orange": "Orange et gris foncé",
+    "theme_auto": "Selon le thème de Home Assistant",
+    "section_display": "Affichage",
+    "chu_target": "Cible d’UTC de votre hybride",
+    "chu_target_helper": "Montre la progression sur la tuile des unités thermiques. Par exemple 2700.",
+    "gdd_target": "Cible de degrés-jours",
+    "gdd_target_helper": "Montre la progression sur les tuiles des degrés-jours.",
+    "show_interpretation": "Afficher l’interprétation (sec, normal, humide)",
+    "show_dates": "Afficher la date des données plus anciennes",
+    "show_links": "Afficher les liens vers AAC"
+  },
+  "product": {
+    "ch_gs": {
+      "label": "Unités thermiques",
+      "period": "depuis le 1er avril",
+      "name": "Unités thermiques de croissance (maïs)"
+    },
+    "gd_0": {
+      "label": "Degrés-jours",
+      "period": "base 0 · depuis le 1er avril",
+      "name": "Degrés-jours base 0"
+    },
+    "gd_5": {
+      "label": "Degrés-jours",
+      "period": "base 5 · depuis le 1er avril",
+      "name": "Degrés-jours base 5"
+    },
+    "gd_10": {
+      "label": "Degrés-jours",
+      "period": "base 10 · depuis le 1er avril",
+      "name": "Degrés-jours base 10"
+    },
+    "gd_15": {
+      "label": "Degrés-jours",
+      "period": "base 15 · depuis le 1er avril",
+      "name": "Degrés-jours base 15"
+    },
+    "ac_01": {
+      "label": "Précipitations",
+      "period": "24 heures",
+      "name": "Précipitations, 24 heures"
+    },
+    "ac_07": {
+      "label": "Précipitations",
+      "period": "7 jours",
+      "name": "Précipitations, 7 jours"
+    },
+    "ac_14": {
+      "label": "Précipitations",
+      "period": "14 jours",
+      "name": "Précipitations, 14 jours"
+    },
+    "ac_30": {
+      "label": "Précipitations",
+      "period": "30 jours",
+      "name": "Précipitations, 30 jours"
+    },
+    "ac_60": {
+      "label": "Précipitations",
+      "period": "60 jours",
+      "name": "Précipitations, 60 jours"
+    },
+    "ac_90": {
+      "label": "Précipitations",
+      "period": "90 jours",
+      "name": "Précipitations, 90 jours"
+    },
+    "ac_gs": {
+      "label": "Précipitations",
+      "period": "saison de croissance",
+      "name": "Précipitations, saison de croissance"
+    },
+    "ac_ay": {
+      "label": "Précipitations",
+      "period": "année agricole",
+      "name": "Précipitations, année agricole"
+    },
+    "ac_wi": {
+      "label": "Précipitations",
+      "period": "hiver",
+      "name": "Précipitations, hiver"
+    },
+    "av_30": {
+      "label": "% de la moyenne",
+      "period": "30 jours",
+      "name": "Précipitations en % de la moyenne, 30 jours"
+    },
+    "av_60": {
+      "label": "% de la moyenne",
+      "period": "60 jours",
+      "name": "Précipitations en % de la moyenne, 60 jours"
+    },
+    "av_90": {
+      "label": "% de la moyenne",
+      "period": "90 jours",
+      "name": "Précipitations en % de la moyenne, 90 jours"
+    },
+    "av_gs": {
+      "label": "% de la moyenne",
+      "period": "saison de croissance",
+      "name": "Précipitations en % de la moyenne, saison de croissance"
+    },
+    "av_ay": {
+      "label": "% de la moyenne",
+      "period": "année agricole",
+      "name": "Précipitations en % de la moyenne, année agricole"
+    },
+    "pe_30": {
+      "label": "Centile des précip.",
+      "period": "30 jours",
+      "name": "Centile des précipitations, 30 jours"
+    },
+    "pe_60": {
+      "label": "Centile des précip.",
+      "period": "60 jours",
+      "name": "Centile des précipitations, 60 jours"
+    },
+    "pe_90": {
+      "label": "Centile des précip.",
+      "period": "90 jours",
+      "name": "Centile des précipitations, 90 jours"
+    },
+    "pe_gs": {
+      "label": "Centile des précip.",
+      "period": "saison de croissance",
+      "name": "Centile des précipitations, saison de croissance"
+    },
+    "pe_ay": {
+      "label": "Centile des précip.",
+      "period": "année agricole",
+      "name": "Centile des précipitations, année agricole"
+    },
+    "dnp_30": {
+      "label": "Écart des précip.",
+      "period": "30 jours",
+      "name": "Écart des précipitations, 30 jours"
+    },
+    "dnp_60": {
+      "label": "Écart des précip.",
+      "period": "60 jours",
+      "name": "Écart des précipitations, 60 jours"
+    },
+    "dnp_90": {
+      "label": "Écart des précip.",
+      "period": "90 jours",
+      "name": "Écart des précipitations, 90 jours"
+    },
+    "dnp_gs": {
+      "label": "Écart des précip.",
+      "period": "saison de croissance",
+      "name": "Écart des précipitations, saison de croissance"
+    },
+    "dnp_ay": {
+      "label": "Écart des précip.",
+      "period": "année agricole",
+      "name": "Écart des précipitations, année agricole"
+    },
+    "ds_cc": {
+      "label": "Jours secs",
+      "period": "consécutifs",
+      "name": "Jours secs consécutifs"
+    },
+    "ds_gs": {
+      "label": "Jours secs",
+      "period": "saison de croissance",
+      "name": "Jours secs, saison de croissance"
+    },
+    "ds_30": {
+      "label": "Jours secs",
+      "period": "30 jours",
+      "name": "Jours secs, 30 jours"
+    },
+    "ds_60": {
+      "label": "Jours secs",
+      "period": "60 jours",
+      "name": "Jours secs, 60 jours"
+    },
+    "ds_90": {
+      "label": "Jours secs",
+      "period": "90 jours",
+      "name": "Jours secs, 90 jours"
+    },
+    "hw25_cc": {
+      "label": "Jours > 25 °C",
+      "period": "consécutifs",
+      "name": "Jours consécutifs au-dessus de 25 °C"
+    },
+    "hw25_gs": {
+      "label": "Jours > 25 °C",
+      "period": "saison de croissance",
+      "name": "Jours au-dessus de 25 °C, saison de croissance"
+    },
+    "hw30_cc": {
+      "label": "Jours > 30 °C",
+      "period": "consécutifs",
+      "name": "Jours consécutifs au-dessus de 30 °C"
+    },
+    "hw30_gs": {
+      "label": "Jours > 30 °C",
+      "period": "saison de croissance",
+      "name": "Jours au-dessus de 30 °C, saison de croissance"
+    },
+    "hw32_cc": {
+      "label": "Jours > 32 °C",
+      "period": "consécutifs",
+      "name": "Jours consécutifs au-dessus de 32 °C"
+    },
+    "hw32_gs": {
+      "label": "Jours > 32 °C",
+      "period": "saison de croissance",
+      "name": "Jours au-dessus de 32 °C, saison de croissance"
+    },
+    "tx_01": {
+      "label": "Température max.",
+      "period": "24 heures",
+      "name": "Température maximale, 24 heures"
+    },
+    "tx_07": {
+      "label": "Température max.",
+      "period": "7 jours",
+      "name": "Température maximale, 7 jours"
+    },
+    "ti_01": {
+      "label": "Température min.",
+      "period": "24 heures",
+      "name": "Température minimale, 24 heures"
+    },
+    "ti_07": {
+      "label": "Température min.",
+      "period": "7 jours",
+      "name": "Température minimale, 7 jours"
+    },
+    "dntm_28": {
+      "label": "Écart de température",
+      "period": "28 jours",
+      "name": "Écart de température, 28 jours"
+    },
+    "dntm_mo": {
+      "label": "Écart de température",
+      "period": "mois dernier",
+      "name": "Écart de température, mois dernier"
+    },
+    "spi_30": {
+      "label": "SPI",
+      "period": "30 jours",
+      "name": "SPI, 30 jours"
+    },
+    "spi_90": {
+      "label": "SPI",
+      "period": "90 jours",
+      "name": "SPI, 90 jours"
+    },
+    "spi_180": {
+      "label": "SPI",
+      "period": "180 jours",
+      "name": "SPI, 180 jours"
+    },
+    "spi_365": {
+      "label": "SPI",
+      "period": "365 jours",
+      "name": "SPI, 365 jours"
+    },
+    "spei_30": {
+      "label": "SPEI",
+      "period": "30 jours",
+      "name": "SPEI, 30 jours"
+    },
+    "spei_90": {
+      "label": "SPEI",
+      "period": "90 jours",
+      "name": "SPEI, 90 jours"
+    },
+    "spei_180": {
+      "label": "SPEI",
+      "period": "180 jours",
+      "name": "SPEI, 180 jours"
+    },
+    "spei_365": {
+      "label": "SPEI",
+      "period": "365 jours",
+      "name": "SPEI, 365 jours"
+    },
+    "pdsi_im": {
+      "label": "Palmer (PDSI)",
+      "period": "",
+      "name": "Indice de sécheresse de Palmer"
+    },
+    "phdi_im": {
+      "label": "Palmer (PHDI)",
+      "period": "",
+      "name": "Indice hydrologique de Palmer"
+    },
+    "pmdi_im": {
+      "label": "Palmer (PMDI)",
+      "period": "",
+      "name": "Indice de Palmer modifié"
+    },
+    "mai_im": {
+      "label": "Palmer Z",
+      "period": "",
+      "name": "Indice Z de Palmer"
+    },
+    "tsm_im": {
+      "label": "Humidité du sol",
+      "period": "totale",
+      "name": "Humidité du sol"
+    },
+    "pnm_im": {
+      "label": "Humidité du sol",
+      "period": "% de la normale",
+      "name": "Humidité du sol en % de la normale"
+    },
+    "dnm_im": {
+      "label": "Écart d’humidité du sol",
+      "period": "",
+      "name": "Écart d’humidité du sol"
+    },
+    "bist_im": {
+      "label": "Indice mixte",
+      "period": "court terme",
+      "name": "Indice mixte à court terme"
+    },
+    "bilt_im": {
+      "label": "Indice mixte",
+      "period": "long terme",
+      "name": "Indice mixte à long terme"
+    }
+  }
+}

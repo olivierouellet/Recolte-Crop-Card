@@ -1,0 +1,399 @@
+{
+  "card": {
+    "default_title": "Agroclimate",
+    "loading": "Loading agroclimate data…",
+    "fetch_failed": "Could not load Agriculture and Agri-Food Canada’s data.",
+    "no_source": "Choose Récolte sensors or products in the card editor.",
+    "both_sources": "Use “entities” or “products”, not both.",
+    "entity_not_found": "Entity not found: {entity}",
+    "not_recolte": "{entity} is not a Récolte integration sensor.",
+    "no_data": "No data",
+    "no_data_here": "No data at this location: the grid covers Canada’s agricultural regions.",
+    "days": "{value} days",
+    "day": "{value} day",
+    "chu": "{value} CHU",
+    "gdd": "{value} GDD",
+    "target_progress": "{percent} of {target}",
+    "target_reached": "{target} target reached",
+    "data_as_of": "AAFC data as of {date}",
+    "link_maps": "Agroclimate maps",
+    "link_info": "Agricultural weather"
+  },
+  "class": {
+    "much_below": "Much below normal",
+    "below": "Below normal",
+    "normal": "Normal",
+    "above": "Above normal",
+    "much_above": "Much above normal",
+    "extremely_dry": "Extremely dry",
+    "severely_dry": "Severely dry",
+    "moderately_dry": "Moderately dry",
+    "near_normal": "Near normal",
+    "moderately_wet": "Moderately wet",
+    "very_wet": "Very wet",
+    "extremely_wet": "Extremely wet",
+    "extreme_drought": "Extreme drought",
+    "severe_drought": "Severe drought",
+    "moderate_drought": "Moderate drought",
+    "mild_drought": "Mild drought",
+    "slightly_wet": "Slightly wet"
+  },
+  "editor": {
+    "source": "Data source",
+    "source_sensor": "Home Assistant sensors (Récolte integration)",
+    "source_direct": "Directly from Agriculture and Agri-Food Canada (no integration)",
+    "entities": "Récolte sensors",
+    "no_sensor": "No Récolte sensors found. Add the Récolte integration, or choose “Directly from Agriculture and Agri-Food Canada”.",
+    "change_products": "Change the products or add a location in the integration",
+    "products": "Products",
+    "location_source": "Location",
+    "location_home": "The Home Assistant home",
+    "location_map": "A place on the map",
+    "location": "Location",
+    "geolocate": "Use this device’s location",
+    "geolocating": "Finding your location…",
+    "geolocate_failed": "Couldn’t get the location. Allow location access for Home Assistant, or place the pin on the map.",
+    "geolocate_insecure": "Location needs an HTTPS connection. Place the pin on the map.",
+    "location_helper": "Coordinates are rounded to four decimals and saved in the dashboard configuration.",
+    "title": "Title",
+    "title_helper": "Leave empty for “Agroclimate”.",
+    "icon": "Icon",
+    "language": "Language",
+    "lang_auto": "Automatic (Home Assistant)",
+    "lang_fr": "Français",
+    "lang_en": "English",
+    "theme": "Colours",
+    "theme_earth": "Earth (brown, green and yellow)",
+    "theme_green_yellow": "Green and yellow",
+    "theme_blue": "Blue and yellow",
+    "theme_red_black": "Red and black",
+    "theme_red_grey": "Red and grey",
+    "theme_orange": "Orange and dark grey",
+    "theme_auto": "Follow the Home Assistant theme",
+    "section_display": "Display",
+    "chu_target": "Your hybrid’s CHU rating",
+    "chu_target_helper": "Shows progress on the crop heat units tile. For example 2700.",
+    "gdd_target": "Degree day target",
+    "gdd_target_helper": "Shows progress on the degree day tiles.",
+    "show_interpretation": "Show what the values mean (dry, normal, wet)",
+    "show_dates": "Show the date of older data",
+    "show_links": "Show the links to AAFC"
+  },
+  "product": {
+    "ch_gs": {
+      "label": "Crop heat units",
+      "period": "since April 1",
+      "name": "Crop heat units (corn)"
+    },
+    "gd_0": {
+      "label": "Degree days",
+      "period": "base 0 · since April 1",
+      "name": "Growing degree days base 0"
+    },
+    "gd_5": {
+      "label": "Degree days",
+      "period": "base 5 · since April 1",
+      "name": "Growing degree days base 5"
+    },
+    "gd_10": {
+      "label": "Degree days",
+      "period": "base 10 · since April 1",
+      "name": "Growing degree days base 10"
+    },
+    "gd_15": {
+      "label": "Degree days",
+      "period": "base 15 · since April 1",
+      "name": "Growing degree days base 15"
+    },
+    "ac_01": {
+      "label": "Precipitation",
+      "period": "24 hours",
+      "name": "Precipitation, 24 hours"
+    },
+    "ac_07": {
+      "label": "Precipitation",
+      "period": "7 days",
+      "name": "Precipitation, 7 days"
+    },
+    "ac_14": {
+      "label": "Precipitation",
+      "period": "14 days",
+      "name": "Precipitation, 14 days"
+    },
+    "ac_30": {
+      "label": "Precipitation",
+      "period": "30 days",
+      "name": "Precipitation, 30 days"
+    },
+    "ac_60": {
+      "label": "Precipitation",
+      "period": "60 days",
+      "name": "Precipitation, 60 days"
+    },
+    "ac_90": {
+      "label": "Precipitation",
+      "period": "90 days",
+      "name": "Precipitation, 90 days"
+    },
+    "ac_gs": {
+      "label": "Precipitation",
+      "period": "growing season",
+      "name": "Precipitation, growing season"
+    },
+    "ac_ay": {
+      "label": "Precipitation",
+      "period": "agricultural year",
+      "name": "Precipitation, agricultural year"
+    },
+    "ac_wi": {
+      "label": "Precipitation",
+      "period": "winter",
+      "name": "Precipitation, winter"
+    },
+    "av_30": {
+      "label": "% of average",
+      "period": "30 days",
+      "name": "Precipitation as % of average, 30 days"
+    },
+    "av_60": {
+      "label": "% of average",
+      "period": "60 days",
+      "name": "Precipitation as % of average, 60 days"
+    },
+    "av_90": {
+      "label": "% of average",
+      "period": "90 days",
+      "name": "Precipitation as % of average, 90 days"
+    },
+    "av_gs": {
+      "label": "% of average",
+      "period": "growing season",
+      "name": "Precipitation as % of average, growing season"
+    },
+    "av_ay": {
+      "label": "% of average",
+      "period": "agricultural year",
+      "name": "Precipitation as % of average, agricultural year"
+    },
+    "pe_30": {
+      "label": "Precip. percentile",
+      "period": "30 days",
+      "name": "Precipitation percentile, 30 days"
+    },
+    "pe_60": {
+      "label": "Precip. percentile",
+      "period": "60 days",
+      "name": "Precipitation percentile, 60 days"
+    },
+    "pe_90": {
+      "label": "Precip. percentile",
+      "period": "90 days",
+      "name": "Precipitation percentile, 90 days"
+    },
+    "pe_gs": {
+      "label": "Precip. percentile",
+      "period": "growing season",
+      "name": "Precipitation percentile, growing season"
+    },
+    "pe_ay": {
+      "label": "Precip. percentile",
+      "period": "agricultural year",
+      "name": "Precipitation percentile, agricultural year"
+    },
+    "dnp_30": {
+      "label": "Precip. departure",
+      "period": "30 days",
+      "name": "Precipitation departure, 30 days"
+    },
+    "dnp_60": {
+      "label": "Precip. departure",
+      "period": "60 days",
+      "name": "Precipitation departure, 60 days"
+    },
+    "dnp_90": {
+      "label": "Precip. departure",
+      "period": "90 days",
+      "name": "Precipitation departure, 90 days"
+    },
+    "dnp_gs": {
+      "label": "Precip. departure",
+      "period": "growing season",
+      "name": "Precipitation departure, growing season"
+    },
+    "dnp_ay": {
+      "label": "Precip. departure",
+      "period": "agricultural year",
+      "name": "Precipitation departure, agricultural year"
+    },
+    "ds_cc": {
+      "label": "Dry days",
+      "period": "in a row",
+      "name": "Dry days in a row"
+    },
+    "ds_gs": {
+      "label": "Dry days",
+      "period": "growing season",
+      "name": "Dry days, growing season"
+    },
+    "ds_30": {
+      "label": "Dry days",
+      "period": "30 days",
+      "name": "Dry days, 30 days"
+    },
+    "ds_60": {
+      "label": "Dry days",
+      "period": "60 days",
+      "name": "Dry days, 60 days"
+    },
+    "ds_90": {
+      "label": "Dry days",
+      "period": "90 days",
+      "name": "Dry days, 90 days"
+    },
+    "hw25_cc": {
+      "label": "Days > 25 °C",
+      "period": "in a row",
+      "name": "Days above 25 °C in a row"
+    },
+    "hw25_gs": {
+      "label": "Days > 25 °C",
+      "period": "growing season",
+      "name": "Days above 25 °C, growing season"
+    },
+    "hw30_cc": {
+      "label": "Days > 30 °C",
+      "period": "in a row",
+      "name": "Days above 30 °C in a row"
+    },
+    "hw30_gs": {
+      "label": "Days > 30 °C",
+      "period": "growing season",
+      "name": "Days above 30 °C, growing season"
+    },
+    "hw32_cc": {
+      "label": "Days > 32 °C",
+      "period": "in a row",
+      "name": "Days above 32 °C in a row"
+    },
+    "hw32_gs": {
+      "label": "Days > 32 °C",
+      "period": "growing season",
+      "name": "Days above 32 °C, growing season"
+    },
+    "tx_01": {
+      "label": "High temperature",
+      "period": "24 hours",
+      "name": "Maximum temperature, 24 hours"
+    },
+    "tx_07": {
+      "label": "High temperature",
+      "period": "7 days",
+      "name": "Maximum temperature, 7 days"
+    },
+    "ti_01": {
+      "label": "Low temperature",
+      "period": "24 hours",
+      "name": "Minimum temperature, 24 hours"
+    },
+    "ti_07": {
+      "label": "Low temperature",
+      "period": "7 days",
+      "name": "Minimum temperature, 7 days"
+    },
+    "dntm_28": {
+      "label": "Temp. departure",
+      "period": "28 days",
+      "name": "Temperature departure, 28 days"
+    },
+    "dntm_mo": {
+      "label": "Temp. departure",
+      "period": "last month",
+      "name": "Temperature departure, last month"
+    },
+    "spi_30": {
+      "label": "SPI",
+      "period": "30 days",
+      "name": "SPI, 30 days"
+    },
+    "spi_90": {
+      "label": "SPI",
+      "period": "90 days",
+      "name": "SPI, 90 days"
+    },
+    "spi_180": {
+      "label": "SPI",
+      "period": "180 days",
+      "name": "SPI, 180 days"
+    },
+    "spi_365": {
+      "label": "SPI",
+      "period": "365 days",
+      "name": "SPI, 365 days"
+    },
+    "spei_30": {
+      "label": "SPEI",
+      "period": "30 days",
+      "name": "SPEI, 30 days"
+    },
+    "spei_90": {
+      "label": "SPEI",
+      "period": "90 days",
+      "name": "SPEI, 90 days"
+    },
+    "spei_180": {
+      "label": "SPEI",
+      "period": "180 days",
+      "name": "SPEI, 180 days"
+    },
+    "spei_365": {
+      "label": "SPEI",
+      "period": "365 days",
+      "name": "SPEI, 365 days"
+    },
+    "pdsi_im": {
+      "label": "Palmer (PDSI)",
+      "period": "",
+      "name": "Palmer drought severity index"
+    },
+    "phdi_im": {
+      "label": "Palmer (PHDI)",
+      "period": "",
+      "name": "Palmer hydrological drought index"
+    },
+    "pmdi_im": {
+      "label": "Palmer (PMDI)",
+      "period": "",
+      "name": "Palmer modified drought index"
+    },
+    "mai_im": {
+      "label": "Palmer Z",
+      "period": "",
+      "name": "Palmer Z index"
+    },
+    "tsm_im": {
+      "label": "Soil moisture",
+      "period": "total",
+      "name": "Soil moisture"
+    },
+    "pnm_im": {
+      "label": "Soil moisture",
+      "period": "% of normal",
+      "name": "Soil moisture as % of normal"
+    },
+    "dnm_im": {
+      "label": "Soil moisture departure",
+      "period": "",
+      "name": "Soil moisture departure"
+    },
+    "bist_im": {
+      "label": "Blended index",
+      "period": "short term",
+      "name": "Short-term blended index"
+    },
+    "bilt_im": {
+      "label": "Blended index",
+      "period": "long term",
+      "name": "Long-term blended index"
+    }
+  }
+}
