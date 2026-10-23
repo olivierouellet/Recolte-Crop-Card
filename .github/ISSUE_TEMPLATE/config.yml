@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Vulnérabilité de sécurité · Security vulnerability
+    url: https://github.com/olivierouellet/Recolte-Crop-Card/security/advisories/new
+    about: N’ouvrez pas d’issue publique; signalez-la ici en privé (voir SECURITY.md). · Don't open a public issue; report it privately here (see SECURITY.md).
+  - name: Problème avec l’intégration · Problem with the integration
+    url: https://github.com/olivierouellet/Recolte-Crop/issues
+    about: L’intégration Récolte a son propre dépôt. · The Récolte integration has its own repository.
+  - name: Données agroclimatiques · Agroclimate data
+    url: https://agriculture.canada.ca/fr/production-agricole/meteo
+    about: Les données viennent d’Agriculture et Agroalimentaire Canada; Récolte ne fait que les afficher. · The data comes from Agriculture and Agri-Food Canada; Récolte only shows it.

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Récolte Crop Card – dev</title>
+    <style>
+      :root {
+        --primary-color: #03a9f4;
+        --primary-text-color: #212121;
+        --secondary-text-color: #727272;
+        --divider-color: rgba(0, 0, 0, 0.12);
+        --card-background-color: #fff;
+        --secondary-background-color: #e5e5e5;
+        --warning-color: #ffa600;
+        --error-color: #db4437;
+        --success-color: #43a047;
+        --info-color: #039be5;
+        --disabled-color: #bdbdbd;
+        --ha-card-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.14), 0 1px 5px rgba(0, 0, 0, 0.12);
+        --ha-card-border-radius: 12px;
+        --lovelace-background: #fafafa;
+      }
+      body.dark {
+        --primary-text-color: #e1e1e1;
+        --secondary-text-color: #9b9b9b;
+        --divider-color: rgba(225, 225, 225, 0.12);
+        --card-background-color: #1c1c1c;
+        --secondary-background-color: #303030;
+        --disabled-color: #6f6f6f;
+        --lovelace-background: #111;
+      }
+      body {
+        margin: 0;
+        padding: 16px;
+        font-family: Roboto, system-ui, sans-serif;
+        background: var(--lovelace-background);
+        color: var(--primary-text-color);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr));
+        gap: 16px;
+        align-items: start;
+      }
+      .cell h3 {
+        margin: 0 0 6px;
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--secondary-text-color);
+      }
+      body.shot {
+        background: transparent;
+        width: 760px;
+      }
+      body.shot h3 {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid" id="cards"></div>
+    <script type="module" src="./harness.js"></script>
+  </body>
+</html>

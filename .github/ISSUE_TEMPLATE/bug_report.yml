@@ -1,0 +1,58 @@
+name: Bogue · Bug report
+description: Quelque chose ne fonctionne pas comme prévu. · Something doesn't work as expected.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Écrivez en français ou en anglais. · Write in French or English.
+
+        Si le problème touche la sécurité, fermez ce formulaire et suivez plutôt
+        [SECURITY.md](https://github.com/olivierouellet/Recolte-Crop-Card/blob/main/SECURITY.md).
+        · If the bug has a security side, close this and use SECURITY.md instead.
+
+        Retirez les coordonnées exactes de votre ferme de la configuration; la province suffit.
+        · Remove your farm's exact coordinates from the configuration; the province is enough.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: Ce qui s’est passé · What happened
+      description: Ce que vous avez fait, ce que vous avez vu, et ce que vous attendiez. · What you did, what you saw, and what you expected.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: source
+    attributes:
+      label: Source des données · Data source
+      options:
+        - Intégration Récolte · Récolte integration
+        - Directement d’AAC · Directly from AAFC
+    validations:
+      required: true
+
+  - type: textarea
+    id: config
+    attributes:
+      label: Configuration de la carte (YAML) · Card configuration (YAML)
+      render: yaml
+    validations:
+      required: false
+
+  - type: input
+    id: version
+    attributes:
+      label: Versions
+      description: Récolte Crop Card, Home Assistant et le navigateur ou l’application. · Récolte Crop Card, Home Assistant and the browser or app.
+      placeholder: Récolte Crop Card 0.1.0, Home Assistant 2026.10.1, Safari 26 / Companion iOS
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Avant d’envoyer · Before submitting
+      options:
+        - label: Ce n’est pas un problème de sécurité. · This is not a security issue.
+          required: true
