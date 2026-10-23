@@ -1,0 +1,8 @@
+{
+  "objectIdFieldName": "OBJECTID",
+  "fields": [
+    { "name": "tType", "type": "esriFieldTypeString", "alias": "tType", "domain": null, "length": 30 },
+    { "name": "latest", "type": "esriFieldTypeDate", "alias": "latest", "domain": null, "length": 8 }
+  ],
+  "features": [{ "attributes": { "tType": "pnm_im", "latest": 1792411200000 } }]
+}

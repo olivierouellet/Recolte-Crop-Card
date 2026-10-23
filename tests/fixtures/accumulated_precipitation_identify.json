@@ -1,0 +1,262 @@
+{
+  "objectId": 0,
+  "name": "Pixel",
+  "value": "21.0217",
+  "location": {
+    "x": -8428577.509310868,
+    "y": 5682955.033742722,
+    "spatialReference": { "wkid": 102100, "latestWkid": 3857 }
+  },
+  "properties": {
+    "Values": [
+      "21.0217",
+      "761.411",
+      "21.0785",
+      "761.411",
+      "50.6415",
+      "761.411",
+      "6.9928",
+      "701.689",
+      "307.374",
+      "303.935",
+      "299.119"
+    ]
+  },
+  "catalogItems": {
+    "objectIdFieldName": "OBJECTID",
+    "features": [
+      {
+        "attributes": {
+          "OBJECTID": 8216,
+          "Name": "ac_07_20261022",
+          "MinPS": 0,
+          "MaxPS": 50000,
+          "LowPS": 5000,
+          "HighPS": 5000,
+          "Category": 1,
+          "Tag": "Dataset",
+          "GroupName": "",
+          "ProductName": "",
+          "CenterX": -10488876.0665,
+          "CenterY": 6492868.102300003,
+          "ZOrder": null,
+          "Shape_Length": 28010000,
+          "Shape_Area": 43477200000000,
+          "dateEnd": 1792670400000,
+          "tType": "ac_07"
+        }
+      },
+      {
+        "attributes": {
+          "OBJECTID": 8821,
+          "Name": "ac_gs_20261022",
+          "MinPS": 0,
+          "MaxPS": 50000,
+          "LowPS": 5000,
+          "HighPS": 5000,
+          "Category": 1,
+          "Tag": "Dataset",
+          "GroupName": "",
+          "ProductName": "",
+          "CenterX": -10488876.0665,
+          "CenterY": 6492868.102300003,
+          "ZOrder": null,
+          "Shape_Length": 28010000,
+          "Shape_Area": 43477200000000,
+          "dateEnd": 1792670400000,
+          "tType": "ac_gs"
+        }
+      },
+      {
+        "attributes": {
+          "OBJECTID": 8215,
+          "Name": "ac_07_20261021",
+          "MinPS": 0,
+          "MaxPS": 50000,
+          "LowPS": 5000,
+          "HighPS": 5000,
+          "Category": 1,
+          "Tag": "Dataset",
+          "GroupName": "",
+          "ProductName": "",
+          "CenterX": -10488876.0665,
+          "CenterY": 6492868.102300003,
+          "ZOrder": null,
+          "Shape_Length": 28010000,
+          "Shape_Area": 43477200000000,
+          "dateEnd": 1792584000000,
+          "tType": "ac_07"
+        }
+      },
+      {
+        "attributes": {
+          "OBJECTID": 8820,
+          "Name": "ac_gs_20261021",
+          "MinPS": 0,
+          "MaxPS": 50000,
+          "LowPS": 5000,
+          "HighPS": 5000,
+          "Category": 1,
+          "Tag": "Dataset",
+          "GroupName": "",
+          "ProductName": "",
+          "CenterX": -10488876.0665,
+          "CenterY": 6492868.102300003,
+          "ZOrder": null,
+          "Shape_Length": 28010000,
+          "Shape_Area": 43477200000000,
+          "dateEnd": 1792584000000,
+          "tType": "ac_gs"
+        }
+      },
+      {
+        "attributes": {
+          "OBJECTID": 8214,
+          "Name": "ac_07_20261019",
+          "MinPS": 0,
+          "MaxPS": 50000,
+          "LowPS": 5000,
+          "HighPS": 5000,
+          "Category": 1,
+          "Tag": "Dataset",
+          "GroupName": "",
+          "ProductName": "",
+          "CenterX": -10488876.0665,
+          "CenterY": 6492868.102300003,
+          "ZOrder": null,
+          "Shape_Length": 28010000,
+          "Shape_Area": 43477200000000,
+          "dateEnd": 1792411200000,
+          "tType": "ac_07"
+        }
+      },
+      {
+        "attributes": {
+          "OBJECTID": 8819,
+          "Name": "ac_gs_20261019",
+          "MinPS": 0,
+          "MaxPS": 50000,
+          "LowPS": 5000,
+          "HighPS": 5000,
+          "Category": 1,
+          "Tag": "Dataset",
+          "GroupName": "",
+          "ProductName": "",
+          "CenterX": -10488876.0665,
+          "CenterY": 6492868.102300003,
+          "ZOrder": null,
+          "Shape_Length": 28010000,
+          "Shape_Area": 43477200000000,
+          "dateEnd": 1792411200000,
+          "tType": "ac_gs"
+        }
+      },
+      {
+        "attributes": {
+          "OBJECTID": 8213,
+          "Name": "ac_07_20261012",
+          "MinPS": 0,
+          "MaxPS": 50000,
+          "LowPS": 5000,
+          "HighPS": 5000,
+          "Category": 1,
+          "Tag": "Dataset",
+          "GroupName": "",
+          "ProductName": "",
+          "CenterX": -10488876.0665,
+          "CenterY": 6492868.102300003,
+          "ZOrder": null,
+          "Shape_Length": 28010000,
+          "Shape_Area": 43477200000000,
+          "dateEnd": 1791806400000,
+          "tType": "ac_07"
+        }
+      },
+      {
+        "attributes": {
+          "OBJECTID": 8818,
+          "Name": "ac_gs_20261012",
+          "MinPS": 0,
+          "MaxPS": 50000,
+          "LowPS": 5000,
+          "HighPS": 5000,
+          "Category": 1,
+          "Tag": "Dataset",
+          "GroupName": "",
+          "ProductName": "",
+          "CenterX": -10488876.0665,
+          "CenterY": 6492868.102300003,
+          "ZOrder": null,
+          "Shape_Length": 28010000,
+          "Shape_Area": 43477200000000,
+          "dateEnd": 1791806400000,
+          "tType": "ac_gs"
+        }
+      },
+      {
+        "attributes": {
+          "OBJECTID": 8848,
+          "Name": "ac_wi_20260331",
+          "MinPS": 0,
+          "MaxPS": 50000,
+          "LowPS": 5000,
+          "HighPS": 5000,
+          "Category": 1,
+          "Tag": "Dataset",
+          "GroupName": "",
+          "ProductName": "",
+          "CenterX": -10488876.0665,
+          "CenterY": 6492868.102300003,
+          "ZOrder": null,
+          "Shape_Length": 28010000,
+          "Shape_Area": 43477200000000,
+          "dateEnd": 1774958400000,
+          "tType": "ac_wi"
+        }
+      },
+      {
+        "attributes": {
+          "OBJECTID": 8847,
+          "Name": "ac_wi_20260330",
+          "MinPS": 0,
+          "MaxPS": 50000,
+          "LowPS": 5000,
+          "HighPS": 5000,
+          "Category": 1,
+          "Tag": "Dataset",
+          "GroupName": "",
+          "ProductName": "",
+          "CenterX": -10488876.0665,
+          "CenterY": 6492868.102300003,
+          "ZOrder": null,
+          "Shape_Length": 28010000,
+          "Shape_Area": 43477200000000,
+          "dateEnd": 1774872000000,
+          "tType": "ac_wi"
+        }
+      },
+      {
+        "attributes": {
+          "OBJECTID": 8846,
+          "Name": "ac_wi_20260323",
+          "MinPS": 0,
+          "MaxPS": 50000,
+          "LowPS": 5000,
+          "HighPS": 5000,
+          "Category": 1,
+          "Tag": "Dataset",
+          "GroupName": "",
+          "ProductName": "",
+          "CenterX": -10488876.0665,
+          "CenterY": 6492868.102300003,
+          "ZOrder": null,
+          "Shape_Length": 28010000,
+          "Shape_Area": 43477200000000,
+          "dateEnd": 1774267200000,
+          "tType": "ac_wi"
+        }
+      }
+    ]
+  },
+  "catalogItemVisibilities": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+}

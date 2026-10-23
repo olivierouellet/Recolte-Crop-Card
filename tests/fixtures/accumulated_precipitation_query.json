@@ -1,0 +1,12 @@
+{
+  "objectIdFieldName": "OBJECTID",
+  "fields": [
+    { "name": "tType", "type": "esriFieldTypeString", "alias": "tType", "domain": null, "length": 30 },
+    { "name": "latest", "type": "esriFieldTypeDate", "alias": "latest", "domain": null, "length": 8 }
+  ],
+  "features": [
+    { "attributes": { "tType": "ac_07", "latest": 1792670400000 } },
+    { "attributes": { "tType": "ac_gs", "latest": 1792670400000 } },
+    { "attributes": { "tType": "ac_wi", "latest": 1774958400000 } }
+  ]
+}

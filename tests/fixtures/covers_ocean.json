@@ -1,0 +1,13 @@
+{
+  "objectId": 0,
+  "name": "Pixel",
+  "value": "NoData",
+  "location": {
+    "x": -5565974.539663678,
+    "y": 5621521.486192066,
+    "spatialReference": { "wkid": 102100, "latestWkid": 3857 }
+  },
+  "properties": null,
+  "catalogItems": null,
+  "catalogItemVisibilities": []
+}

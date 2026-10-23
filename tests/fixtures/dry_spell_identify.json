@@ -1,0 +1,59 @@
+{
+  "objectId": 0,
+  "name": "Pixel",
+  "value": "5",
+  "location": {
+    "x": -8428577.509310868,
+    "y": 5682955.033742722,
+    "spatialReference": { "wkid": 102100, "latestWkid": 3857 }
+  },
+  "properties": { "Values": ["5", "1.13427e+38"] },
+  "catalogItems": {
+    "objectIdFieldName": "OBJECTID",
+    "features": [
+      {
+        "attributes": {
+          "OBJECTID": 2955,
+          "Name": "ds_cc_20261021",
+          "MinPS": 0,
+          "MaxPS": 50000,
+          "LowPS": 5000,
+          "HighPS": 5000,
+          "Category": 1,
+          "Tag": "Dataset",
+          "GroupName": "",
+          "ProductName": "",
+          "CenterX": -10488876.0665,
+          "CenterY": 6492868.102300003,
+          "ZOrder": null,
+          "Shape_Length": 28010000,
+          "Shape_Area": 43477200000000,
+          "dateEnd": 1792584000000,
+          "tType": "ds_cc"
+        }
+      },
+      {
+        "attributes": {
+          "OBJECTID": 2954,
+          "Name": "ds_cc_20261020",
+          "MinPS": 0,
+          "MaxPS": 50000,
+          "LowPS": 5000,
+          "HighPS": 5000,
+          "Category": 1,
+          "Tag": "Dataset",
+          "GroupName": "",
+          "ProductName": "",
+          "CenterX": -10488876.0665,
+          "CenterY": 6492868.102300003,
+          "ZOrder": null,
+          "Shape_Length": 28010000,
+          "Shape_Area": 43477200000000,
+          "dateEnd": 1792497600000,
+          "tType": "ds_cc"
+        }
+      }
+    ]
+  },
+  "catalogItemVisibilities": [1, 0]
+}

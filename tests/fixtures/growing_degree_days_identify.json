@@ -1,0 +1,80 @@
+{
+  "objectId": 0,
+  "name": "Pixel",
+  "value": "2133.8",
+  "location": {
+    "x": -8428577.509310868,
+    "y": 5682955.033742722,
+    "spatialReference": { "wkid": 102100, "latestWkid": 3857 }
+  },
+  "properties": { "Values": ["2133.8", "2114.28", "2080.19"] },
+  "catalogItems": {
+    "objectIdFieldName": "OBJECTID",
+    "features": [
+      {
+        "attributes": {
+          "OBJECTID": 2036,
+          "Name": "gd_5_20261019",
+          "MinPS": 0,
+          "MaxPS": 50000,
+          "LowPS": 5000,
+          "HighPS": 5000,
+          "Category": 1,
+          "Tag": "Dataset",
+          "GroupName": "",
+          "ProductName": "",
+          "CenterX": -10488876.0665,
+          "CenterY": 6492868.102300003,
+          "ZOrder": -1,
+          "Shape_Length": 28010000,
+          "Shape_Area": 43477200000000,
+          "dateEnd": 1792411200000,
+          "tType": "gd_5"
+        }
+      },
+      {
+        "attributes": {
+          "OBJECTID": 2035,
+          "Name": "gd_5_20261012",
+          "MinPS": 0,
+          "MaxPS": 50000,
+          "LowPS": 5000,
+          "HighPS": 5000,
+          "Category": 1,
+          "Tag": "Dataset",
+          "GroupName": "",
+          "ProductName": "",
+          "CenterX": -10488876.0665,
+          "CenterY": 6492868.102300003,
+          "ZOrder": -1,
+          "Shape_Length": 28010000,
+          "Shape_Area": 43477200000000,
+          "dateEnd": 1791806400000,
+          "tType": "gd_5"
+        }
+      },
+      {
+        "attributes": {
+          "OBJECTID": 2034,
+          "Name": "gd_5_20261005",
+          "MinPS": 0,
+          "MaxPS": 50000,
+          "LowPS": 5000,
+          "HighPS": 5000,
+          "Category": 1,
+          "Tag": "Dataset",
+          "GroupName": "",
+          "ProductName": "",
+          "CenterX": -10488876.0665,
+          "CenterY": 6492868.102300003,
+          "ZOrder": -1,
+          "Shape_Length": 28010000,
+          "Shape_Area": 43477200000000,
+          "dateEnd": 1791201600000,
+          "tType": "gd_5"
+        }
+      }
+    ]
+  },
+  "catalogItemVisibilities": [1, 0, 0]
+}
