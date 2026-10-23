@@ -22,7 +22,7 @@
 
 Une carte de tableau de bord pour les données agroclimatiques d’**Agriculture et Agroalimentaire Canada (AAC)** : unités thermiques de croissance (UTC), degrés-jours, précipitations et leur comparaison à la moyenne, jours secs, vagues de chaleur, humidité du sol et indices de sécheresse, à votre terre.
 
-- Une **tuile par produit**, dans l’ordre de votre choix, avec la période mesurée.
+- Une **tuile par produit**, avec la période mesurée. **Glissez les tuiles dans l’éditeur** pour changer leur ordre, et masquez celles qui ne vous servent pas.
 - **L’interprétation** des centiles, des indices SPI et SPEI et des indices de Palmer : de « Extrêmement sec » à « Extrêmement humide ».
 - **La progression vers les UTC de votre hybride** de maïs (ou vers une cible de degrés-jours).
 - La date des données, et celle des produits hebdomadaires quand elle diffère.
@@ -30,11 +30,12 @@ Une carte de tableau de bord pour les données agroclimatiques d’**Agriculture
 - **Sept jeux de couleurs** : terre, les couleurs des grandes marques de tracteurs (vert et jaune, bleu, rouge et noir, rouge et gris, orange), ou le thème de Home Assistant.
 - En français et en anglais, en clair et en sombre, jusqu’à 320 px de large.
 
-### Deux sources de données
+### Trois façons de choisir les données
 
 | Source | Comment | Pour qui |
 |---|---|---|
-| **Intégration [Récolte](https://github.com/olivierouellet/Recolte-Crop)** | Choisissez ses capteurs. | Historique, statistiques à long terme, automatisations; une seule lecture par Home Assistant toutes les 3 heures. |
+| **Un endroit de l’intégration [Récolte](https://github.com/olivierouellet/Recolte-Crop)** | Choisissez l’endroit : la carte montre tous ses capteurs, sous son nom. Un produit ajouté ou retiré dans l’intégration apparaît ou disparaît de lui-même. | Historique, statistiques à long terme, automatisations; une seule lecture par Home Assistant toutes les 3 heures. L’endroit ne se règle qu’une fois, dans l’intégration. |
+| **Des capteurs Récolte choisis un par un** | Choisissez les capteurs, de un ou plusieurs endroits. | Une sélection précise, ou plusieurs endroits sur la même carte. |
 | **Directement d’AAC** | Choisissez les produits et l’endroit : le domicile, un repère sur la carte, ou la position de l’appareil qui modifie la carte. | Rien d’autre à installer. Chaque navigateur lit les valeurs lui-même et les garde 3 heures. |
 
 ### Installation
@@ -55,14 +56,20 @@ Une carte de tableau de bord pour les données agroclimatiques d’**Agriculture
 Ajoutez la carte avec **+ Ajouter une carte → Récolte Crop Card**; l’éditeur visuel couvre toutes les options. En YAML :
 
 ```yaml
-# Avec l’intégration Récolte
+# Un endroit de l’intégration Récolte : tous ses capteurs, sous son nom
 type: custom:recolte-crop-card
-title: Ferme
+device: 3f1c0d…            # l’éditeur le choisit pour vous
+products: [ac_gs, ch_gs]   # ces deux-là d’abord, les autres ensuite
+hide: [gd_5]               # sauf celui-ci
+chu_target: 2700
+```
+
+```yaml
+# Des capteurs choisis un par un, dans cet ordre
+type: custom:recolte-crop-card
 entities:
   - sensor.ferme_unites_thermiques_de_croissance_mais
   - sensor.ferme_precipitations_saison_de_croissance
-  - sensor.ferme_jours_secs_consecutifs
-chu_target: 2700
 ```
 
 ```yaml
@@ -75,10 +82,12 @@ longitude: -71.2080
 
 | Option | Défaut | Description |
 |---|---|---|
-| `entities` | | Capteurs de l’intégration Récolte, dans l’ordre d’affichage. |
-| `products` | | Mode direct : codes des produits d’AAC (`ch_gs`, `ac_07`…), dans l’ordre d’affichage. La liste complète est dans le [README de l’intégration](https://github.com/olivierouellet/Recolte-Crop#produits). |
+| `device` | | Un endroit de l’intégration Récolte (son appareil) : tous ses capteurs. Le titre par défaut est son nom. |
+| `hide` | | Avec `device` : les produits à masquer. |
+| `entities` | | Des capteurs de l’intégration Récolte, dans l’ordre d’affichage. |
+| `products` | | Avec `device` : l’ordre des tuiles; les produits qui n’y sont pas suivent, dans l’ordre de l’intégration. En mode direct : les produits d’AAC à lire (`ch_gs`, `ac_07`…), dans l’ordre d’affichage. La liste complète est dans le [README de l’intégration](https://github.com/olivierouellet/Recolte-Crop#produits). |
 | `latitude`, `longitude` | domicile | Mode direct : l’endroit. Arrondis à quatre décimales par l’éditeur. |
-| `title` | « Agroclimat » | Titre de la carte. |
+| `title` | nom de l’endroit, ou « Agroclimat » | Titre de la carte. |
 | `icon` | `mdi:sprout` | Icône de l’en-tête. |
 | `chu_target` | | UTC de votre hybride : une barre de progression sur la tuile des unités thermiques. |
 | `gdd_target` | | Cible de degrés-jours : une barre sur les tuiles des degrés-jours. |
@@ -113,7 +122,7 @@ Données : [Agroclimat](https://agriculture.canada.ca/fr/production-agricole/met
 
 A dashboard card for **Agriculture and Agri-Food Canada (AAFC)**’s agroclimate data: crop heat units (CHU), growing degree days, precipitation and how it compares with the average, dry days, heat waves, soil moisture and drought indices, at your field.
 
-- **One tile per product**, in the order you choose, with the period measured.
+- **One tile per product**, with the period measured. **Drag the tiles in the editor** to change their order, and hide the ones you don’t need.
 - **What the values mean** for percentiles, SPI and SPEI, and Palmer indices: from “Extremely dry” to “Extremely wet”.
 - **Progress toward your corn hybrid’s CHU rating** (or toward a degree day target).
 - The data date, and that of weekly products when it differs.
@@ -121,11 +130,12 @@ A dashboard card for **Agriculture and Agri-Food Canada (AAFC)**’s agroclimate
 - **Seven colour schemes**: earth tones, the colours of the big tractor makers (green and yellow, blue, red and black, red and grey, orange), or the Home Assistant theme.
 - In French and English, light and dark, down to 320 px wide.
 
-### Two data sources
+### Three ways to pick the data
 
 | Source | How | Who it’s for |
 |---|---|---|
-| **[Récolte](https://github.com/olivierouellet/Recolte-Crop#english) integration** | Pick its sensors. | History, long-term statistics, automations; one read per Home Assistant every 3 hours. |
+| **A location from the [Récolte](https://github.com/olivierouellet/Recolte-Crop#english) integration** | Pick the location: the card shows all its sensors, under its name. A product added or removed in the integration appears or disappears on its own. | History, long-term statistics, automations; one read per Home Assistant every 3 hours. The location is set only once, in the integration. |
+| **Récolte sensors chosen one by one** | Pick the sensors, from one or more locations. | An exact selection, or several locations on one card. |
 | **Directly from AAFC** | Pick the products and the location: the home, a pin on the map, or the location of the device editing the card. | Nothing else to install. Each browser reads the values itself and keeps them for 3 hours. |
 
 ### Installation
@@ -146,14 +156,20 @@ A dashboard card for **Agriculture and Agri-Food Canada (AAFC)**’s agroclimate
 Add the card with **+ Add card → Récolte Crop Card**; the visual editor covers every option. In YAML:
 
 ```yaml
-# With the Récolte integration
+# A location from the Récolte integration: all its sensors, under its name
 type: custom:recolte-crop-card
-title: Farm
+device: 3f1c0d…            # the editor picks it for you
+products: [ac_gs, ch_gs]   # these two first, then the others
+hide: [gd_5]               # except this one
+chu_target: 2700
+```
+
+```yaml
+# Sensors chosen one by one, in this order
+type: custom:recolte-crop-card
 entities:
   - sensor.farm_crop_heat_units_corn
   - sensor.farm_precipitation_growing_season
-  - sensor.farm_dry_days_in_a_row
-chu_target: 2700
 ```
 
 ```yaml
@@ -167,10 +183,12 @@ language: en
 
 | Option | Default | Description |
 |---|---|---|
+| `device` | | A Récolte integration location (its device): all its sensors. The default title is its name. |
+| `hide` | | With `device`: products to hide. |
 | `entities` | | Récolte integration sensors, in display order. |
-| `products` | | Direct mode: AAFC product codes (`ch_gs`, `ac_07`…), in display order. The full list is in the [integration’s README](https://github.com/olivierouellet/Recolte-Crop#products). |
+| `products` | | With `device`: the tile order; products it doesn’t list follow, in the integration’s order. In direct mode: the AAFC products to read (`ch_gs`, `ac_07`…), in display order. The full list is in the [integration’s README](https://github.com/olivierouellet/Recolte-Crop#products). |
 | `latitude`, `longitude` | home | Direct mode: the location. Rounded to four decimals by the editor. |
-| `title` | “Agroclimate” | Card title. |
+| `title` | the location’s name, or “Agroclimate” | Card title. |
 | `icon` | `mdi:sprout` | Header icon. |
 | `chu_target` | | Your hybrid’s CHU rating: a progress bar on the crop heat units tile. |
 | `gdd_target` | | A degree day target: a bar on the degree day tiles. |
