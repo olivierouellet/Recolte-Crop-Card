@@ -60,11 +60,22 @@ const hass: HomeAssistant = {
   language: params.get('lang') ?? 'fr',
   config: { latitude: 45.3889, longitude: -75.7152, location_name: 'Ferme expérimentale' },
   states,
+  // Every sensor belongs to one Récolte location (device), as in the entity and device registries.
+  entities: Object.fromEntries(
+    Object.keys(states).map((entity_id) => [entity_id, { entity_id, device_id: 'dev-ferme', platform: 'recolte' }]),
+  ),
+  devices: { 'dev-ferme': { id: 'dev-ferme', name: 'Ferme expérimentale', name_by_user: null } },
 };
 const all = Object.keys(states);
 
 const themes = ['earth', 'green_yellow', 'blue', 'red_black', 'red_grey', 'orange', 'auto'] as const;
 const scenarios: Array<{ label: string; config: Partial<RecolteCardConfig> }> = [
+  { label: 'Endroit · ordre de l’intégration', config: { device: 'dev-ferme' } },
+  {
+    label: 'Endroit · réordonné, trois masqués',
+    config: { device: 'dev-ferme', products: ['pe_gs', 'ds_cc', 'ch_gs'], hide: ['gd_5', 'spei_90', 'pdsi_im'] },
+  },
+  { label: 'Endroit introuvable', config: { device: 'dev-gone' } },
   ...themes.map((theme) => ({
     label: `Thème ${theme}`,
     config: { entities: [all[0], all[1], all[5], all[8]], theme, chu_target: 3800 },
